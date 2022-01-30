@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Comforter&family=Island+Moments&family=Neonderthaw&family=Ubuntu&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: url("./img/bg.jpeg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+.circle {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  top: calc(50% - 200px);
+  left: calc(50% - 200px);
+  border-radius: 240px;
+  overflow: hidden;
+  border: 10px solid #ebc490;
+}
+
+.pie {
+  width: 250px;
+  height: 216px;
+  position: absolute;
+  overflow: hidden;
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  top: calc(50% - 108px);
+  left: calc(50% - 125px);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    23deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(255, 102, 0, 0.896796218487395) 0%,
+    rgba(235, 221, 218, 1) 34%,
+    rgba(255, 4, 0, 0.896796218487395) 98%
+  );
+}
+
+.pie {
+  transform: rotate(calc(var(--i) * 60deg)) translateY(50%);
+}
+.pie .money {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(90deg) translateX(80px);
+  font-size: 32px;
+  font-family: "Neonderthaw", "Times New Roman", arial, helvetica, sans-serif;
+  color: black;
+  width: 100%;
+}
+
+.hand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -40px;
+  margin-left: -40px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+  background: #eb4d5c;
+  border: 4px solid #fff;
+  z-index: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hand:before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  transform: rotate(67deg) skewX(45deg);
+  background: #fff;
+  top: -4px;
+  left: 50%;
+  margin-left: -8px;
+  z-index: 0;
+}
+
+.hand:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  background: #eb4d5c;
+  border-radius: 50%;
+}
+
+.hand span {
+  position: relative;
+  z-index: 2;
+  color: #fff4f5;
+  font-weight: bold;
+  font-size: 22px;
+  font-style: italic;
+}
+.notification {
+  position: absolute;
+  width: 500px;
+  height: 300px;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    23deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(255, 102, 0, 0.896796218487395) 0%,
+    rgba(237, 204, 201, 1) 22%,
+    rgba(235, 221, 218, 1) 34%,
+    rgba(244, 130, 126, 1) 47%,
+    rgba(243, 140, 136, 1) 58%,
+    rgba(255, 4, 0, 0.896796218487395) 98%
+  );
+  top: 50%;
+  left: 50%;
+  transform: translate(-250px, -150px);
+  z-index: 1000;
+  border-radius: 10px;
+  transform: 1s linear;
+  display: none;
+  animation: notiAnimation 2s linear forwards;
+}
+.notification .btn-ok {
+  position: absolute;
+  top: 85%;
+  left: calc(50% - 40px);
+  padding: 5px 10px;
+  font-family: "Island Moments", cursive;
+  font-size: 20px;
+}
+.notification .btn-ok:hover {
+  color: red;
+}
+
+.notification .title {
+  font-size: 64px;
+  text-align: center;
+  margin: 10px 0;
+  font-family: "Comforter", "Times New Roman", sans-serif;
+}
+.notification .text {
+  /* padding: 10px; */
+  text-align: center;
+  font-size: 32px;
+  font-family: "Comforter", "Times New Roman", sans-serif;
+}
+.notification .money-noti {
+  text-align: center;
+  font-size: 64px;
+  font-family: "Neonderthaw", "Times New Roman", arial, helvetica, sans-serif;
+  color: rgba(255, 4, 0, 0.896796218487395);
+}
+@keyframes indexButton {
+  0% {
+    pointer-events: none;
+  }
+  99% {
+    pointer-events: none;
+  }
+  100% {
+    pointer-events: all;
+  }
+}
+
+@keyframes notiAnimation {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Ubuntu", sans-serif;
+}
+.content svg {
+  width: 100%;
+  height: 20vh;
+}
+.content svg text {
+  font-size: 120px;
+  fill: rgba(0, 0, 0, 0.1);
+  stroke-width: 2px;
+  stroke: rgba(255, 4, 0, 0.896796218487395);
+  stroke-opacity: 0.8;
+  stroke-linejoin: round;
+  stroke-dasharray: 80;
+  animation: svgAnimation 1s linear infinite;
+}
+@keyframes svgAnimation {
+  100% {
+    stroke-dashoffset: 160;
+  }
+}
