@@ -129,7 +129,7 @@ body {
   border-radius: 10px;
   transform: 1s linear;
   display: none;
-  animation: notiAnimation 2s linear forwards;
+  animation: notiAnimation 1s linear forwards;
 }
 .notification .btn-ok {
   position: absolute;

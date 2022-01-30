@@ -60,7 +60,6 @@ const getRandomValue = () => {
   const max = data.deg * 60 + 90;
   degCircle = Math.floor(Math.random() * (max - min)) + min;
   arc = degCircle + 360 * round;
-  console.log(money, arc);
 };
 const getTransitonTime = () =>
   round * timePerRound + (timePerRound * degCircle) / 360;
