@@ -56,8 +56,8 @@ const getRandomValue = () => {
     (item) => item.min <= random && item.max >= random
   );
   money = data.value;
-  const min = data.deg * 60 + 30;
-  const max = data.deg * 60 + 90;
+  const min = data.deg * 60 + 35;
+  const max = data.deg * 60 + 85;
   degCircle = Math.floor(Math.random() * (max - min)) + min;
   arc = degCircle + 360 * round;
 };
