@@ -45,7 +45,7 @@ const DEFAUT_VALUE = [
 let money = 0;
 let arc = 0;
 let degCircle = 0;
-const round = 10;
+const round = 5;
 const timePerRound = 2;
 let timer;
 let notier;
@@ -87,7 +87,7 @@ buttonQuay.addEventListener("click", () => {
   setTimeout(() => {
     moneyContainer.textContent = `${money}`;
     noti.style.display = "block";
-  }, 22000);
+  }, 12000);
 });
 buttonOk.addEventListener("click", () => {
   noti.style.display = "none";
